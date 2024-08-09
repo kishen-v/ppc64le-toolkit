@@ -16,8 +16,10 @@ curl -o /usr/local/bin/fio https://raw.githubusercontent.com/kishen-v/ppc64le-to
 kubectl apply -f fio.yaml
 kubectl exec --it fio -- bash
 ```
-The fio binary is available in the path and can be run inside the pod to determine read/write I/O performance. iostat with extended metrics 
-with regards to the storage's read/write wait(r_await/w_await), queue length, svctm(service time) can be monitored to identify any spikes in the metrics. 
+The fio binary is available in the $PATH and can be run inside the pod to determine read/write I/O performance. 
+
+iostat with extended metrics with regards to the storage's read/write wait(r_await/w_await), queue length, svctm(service time) can be monitored to identify any spikes in the metrics. 
+
 Additionally, iotop can help identify processes that are IO intensive. 
 
 
