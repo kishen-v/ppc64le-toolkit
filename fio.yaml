@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: fio
+  name: fio
+spec:
+  containers:
+  - image: quay.io/kviswana/fio-os:latest
+    name: fio
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "sleep infinity" ]
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
